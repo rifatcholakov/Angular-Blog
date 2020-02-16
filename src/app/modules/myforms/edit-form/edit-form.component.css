@@ -1,0 +1,35 @@
+#title {
+    width: 100%;
+    margin: 2rem 0;
+    font-size: 28px;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 2.5px solid rgba(0, 0, 0, 0.1);
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 700;
+}
+
+#title:focus {
+    border-bottom: 2.5px solid #007bff;
+    transition: ease-out 0.5s;
+}
+
+#post-btn {
+    width: 100%;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 15px 25px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    margin: 2rem 0;
+}
+
+#post-btn:hover {
+    background-color: #006bdd;
+}

@@ -1,4 +1,26 @@
 <app-header backgroundUrl="assets/images/rewrite-edit.jpg" title="Create new post" subtitle="You can always edit a bad page. You can’t edit a blank page."></app-header>
-<form>
-    <input type="text" placeholder="Title">
-</form>
+
+
+<div class="container">
+    <form>
+        <div class="row">
+            <div class="col">
+                <input type="text" id="title" placeholder="Enter post title">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ejs-richtexteditor id='defaultRTE'>
+                    <ng-template #valueTemplate>
+                        
+                    </ng-template>
+                </ejs-richtexteditor>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <button id="post-btn">Post</button>
+            </div>
+        </div>
+    </form>
+</div>

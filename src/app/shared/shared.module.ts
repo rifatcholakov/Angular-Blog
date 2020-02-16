@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent],
   imports: [
     CommonModule,
     AngularFontAwesomeModule
   ],
   exports: [
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    HeaderComponent
   ]
 })
 export class SharedModule { }

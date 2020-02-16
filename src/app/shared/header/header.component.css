@@ -1,0 +1,93 @@
+header.masthead {
+    margin-bottom: 50px;
+    background: no-repeat center center;
+    background-color: #868e96;
+    background-attachment: scroll;
+    position: relative;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #212529;
+    opacity: .5;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+header.masthead .page-heading, header.masthead .site-heading {
+    text-align: center;
+}
+
+header.masthead .site-heading {
+    padding: 200px 0 150px;
+    color: #fff;
+    text-align: center;
+}
+
+h1 { 
+    font-weight: 800;
+    font-size: 80px;
+}
+
+header.masthead .page-heading h1, header.masthead .site-heading h1 {
+    font-size: 50px;
+    margin-top: 0;
+}
+
+header.masthead .site-heading {
+    text-align: center;
+}
+
+.subheading, header.masthead .site-heading .subheading {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 10px 0 0;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+
+    header.masthead .page-heading h1, header.masthead .site-heading h1 {
+        font-size: 80px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}

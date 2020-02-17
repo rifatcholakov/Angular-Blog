@@ -2,16 +2,21 @@
 
 
 <div class="container">
-    <form>
+    <form #postForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col">
-                <input type="text" id="title" placeholder="Enter post title">
+                <input ngModel name="title" type="text" id="title" placeholder="Enter post title" required>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <ejs-richtexteditor id='defaultRTE'>
-                    <ng-template #valueTemplate>
+                <input ngModel name="imageUrl" type="text" id="image" placeholder="Image url" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <ejs-richtexteditor #postContent>
+                    <ng-template #postContentt>
                         
                     </ng-template>
                 </ejs-richtexteditor>
@@ -19,7 +24,7 @@
         </div>
         <div class="row">
             <div class="col-lg-2">
-                <button id="post-btn">Post</button>
+                <button id="post-btn" type="submit">Post</button>
             </div>
         </div>
     </form>

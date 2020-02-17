@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { EditFormComponent } from './modules/myforms/edit-form/edit-form.component';
+import { PostComponent } from './core/post/post.component';
 
 
 const routes: Routes = [
-  { path: 'new-post', component: EditFormComponent }
+  { path: 'new-post', component: EditFormComponent },
+  { path: 'post', component: PostComponent }
 ];
 
 @NgModule({

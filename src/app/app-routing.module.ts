@@ -7,7 +7,7 @@ import { PostComponent } from './core/post/post.component';
 const routes: Routes = [
   { path: 'post/:id', component: PostComponent},
   { path: 'new-post', component: EditFormComponent },
-  // { path: 'post', component: PostComponent }
+  { path: 'edit/:id', component: EditFormComponent }
 ];
 
 @NgModule({

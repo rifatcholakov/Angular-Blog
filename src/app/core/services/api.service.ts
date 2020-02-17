@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 })
 export class ApiService {
   posts: Array<any>
+  editMode: boolean = false;
 
   constructor(private db: AngularFirestore, private router: Router) { }
 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../http/api.service';
+import { ApiService } from '../services/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -9,10 +10,12 @@ import { ApiService } from '../http/api.service';
 export class PostComponent implements OnInit {
   post: any;
 
-  constructor(private api: ApiService) { }
+  constructor(private api: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.api.getPost('test-post').subscribe(data => this.post = data);
+    const postId = this.route.snapshot.params['id'];
+
+    this.api.getPost(postId).subscribe(data => this.post = data);
   }
 
 }

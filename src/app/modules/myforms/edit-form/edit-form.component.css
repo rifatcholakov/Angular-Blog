@@ -45,3 +45,8 @@
     transition: ease-out 0.2s;
     background-color: #006bdd;
 }
+
+.error {
+    color: #D8000C;
+    font-size: 18px;
+}

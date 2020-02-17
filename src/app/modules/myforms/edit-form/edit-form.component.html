@@ -5,12 +5,26 @@
     <form #postForm="ngForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col">
-                <input ngModel name="title" type="text" id="title" placeholder="Enter post title" required>
+                <input #title="ngModel" ngModel name="title" type="text" id="title" placeholder="Enter post title" required>
+            </div>
+        </div>
+        <div class="row" *ngIf="!title.valid && title.touched">
+            <div class="col">
+                <ul>
+                    <li class="error">Please enter a title</li>
+                </ul>
             </div>
         </div>
         <div class="row">
             <div class="col">
-                <input ngModel name="imageUrl" type="text" id="image" placeholder="Image url" required>
+                <input #imageUrl="ngModel" ngModel name="imageUrl" type="text" id="image" placeholder="Image url" required>
+            </div>
+        </div>
+        <div class="row" *ngIf="!imageUrl.valid && imageUrl.touched">
+            <div class="col">
+                <ul>
+                    <li class="error">Please enter image url</li>
+                </ul>
             </div>
         </div>
         <div class="row">

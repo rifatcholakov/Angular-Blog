@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ToolbarService, LinkService, ImageService, HtmlEditorService, RichTextEditorComponent } from '@syncfusion/ej2-angular-richtexteditor';
 import { Post } from 'src/app/shared/interfaces/post';
 import { ApiService } from 'src/app/core/services/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-form',
@@ -13,17 +13,20 @@ import { ActivatedRoute } from '@angular/router';
 export class EditFormComponent implements OnInit {
   @ViewChild('postForm', { static: false }) postForm; 
   @ViewChild('richTextEditor', { static: false }) richTextEditor: RichTextEditorComponent; 
-  editMode: boolean;
-  text = '<p>Some Text Content</p>';
+  pageTitle: string;
+  pageSubtitle: string;
+  id: string;
 
-  constructor(private api: ApiService, private route: ActivatedRoute) { }
+  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) {
+    const urlPathStartsWithEdit = this.router.url.split('/').filter(el => el !== '')[0];
+    this.api.editMode = urlPathStartsWithEdit === 'edit' ? true : false; 
+
+    this.pageTitle = this.api.editMode ? 'Edit post' :'Create new post' ;
+    this.pageSubtitle = this.api.editMode ? 'Write without fear. Edit without mercy.' : 'You can always edit a bad page. You can’t edit a blank page.';
+  }
 
   ngOnInit() {
-    this.editMode = this.api.editMode;
-
-    this.api.editMode = true;
     if(this.api.editMode) {
-      let formData = {};
       const postId = this.route.snapshot.params['id'];
 
       this.api.getPost(postId).subscribe((data: Post) =>{
@@ -33,6 +36,8 @@ export class EditFormComponent implements OnInit {
         });
 
         this.richTextEditor.updateValue(data.content);
+
+        this.id = postId;
       });
     }
   }
@@ -43,15 +48,18 @@ export class EditFormComponent implements OnInit {
         title: this.postForm.controls.title.value,
         date: (new Date()).toLocaleDateString(),
         imageUrl: this.postForm.controls.imageUrl.value,
-        content: this.richTextEditor.value
+        content: this.richTextEditor.value,
+      } 
+
+      if(this.api.editMode) {
+        this.api.updatePost(post, this.id);
+      } else {
+        this.id = post.title.split(' ').join('-').toLocaleLowerCase(); 
+        this.api.createPost(post, this.id);
       }
 
-      const id = post.title.split(' ').join('-').toLocaleLowerCase();
-
-      this.api.editMode = false; 
-
-      this.api.createPost(post, id);
     }
+
   }
 
 }

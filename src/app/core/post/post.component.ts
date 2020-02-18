@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -9,13 +9,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
   post: any;
+  postId: string;
 
-  constructor(private api: ApiService, private route: ActivatedRoute) { }
+  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
-    const postId = this.route.snapshot.params['id'];
+    this.postId = this.route.snapshot.params['id'];
 
-    this.api.getPost(postId).subscribe(data => this.post = data);
+    this.api.getPost(this.postId).subscribe(data => this.post = data);
   }
 
+  onEdit() {
+    this.router.navigate(['/edit/', this.postId]);
+  }
+
+  onDelete() {
+    this.api.deletePost(this.postId);
+    this.router.navigate(['/']);
+  }
 }

@@ -9,7 +9,8 @@ p {
     margin: 30px 0;
 }
 
-#edit-btn {
+#edit-btn,
+#delete-btn {
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 14px;
     font-weight: 800;
@@ -26,4 +27,13 @@ p {
 #edit-btn:hover {
     transition: ease-out 0.2s;
     background-color: #006bdd;
+}
+
+#delete-btn {
+    margin-right: 1rem;
+    background-color: #D21F3C;
+}
+
+#delete-btn:hover {
+    background-color: #bd1b35;
 }

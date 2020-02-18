@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ApiService {
-  posts: Array<any>
+  posts: Array<any>;
   editMode: boolean = false;
 
   constructor(private db: AngularFirestore, private router: Router) { }
@@ -23,6 +23,16 @@ export class ApiService {
     this.db.collection('posts').doc(id).set(post).then(
       () => this.router.navigate(['post', id])
     );
+  }
+
+  updatePost(post, id) {
+    this.db.collection('posts').doc(id).update(post).then(
+      () => this.router.navigate(['post', id])
+    );
+  }
+
+  deletePost(id) {
+    this.db.collection('posts').doc(id).delete();
   }
 
 }

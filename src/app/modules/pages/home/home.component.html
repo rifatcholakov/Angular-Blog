@@ -1,1 +1,32 @@
-<app-header title="Welcome to My Awesome Site" subtitle="" backgroundUrl="/assets/images/home.jpg"></app-header>
+<app-header title="Hello This Is Rifat. I'm FrontEnd Developer." subtitle="" backgroundUrl="/assets/images/home.jpg"></app-header>
+<div class="container section-1">
+    <div class="row">
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <h1 class="title">Looking to hire a developer?</h1>
+        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12">
+            <a class="contact-btn" routerLink="/contact">Contact&nbsp;Me</a>
+        </div>
+    </div>
+</div>
+
+<div class="section-3">
+    <div class="row">
+        <h2 class="subtitle">Latest Posts</h2>
+    </div>
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let post of posts">
+                <div class="post-preview">
+                <a [routerLink]="'/post/' + post.id" class="post-link">
+                    <h2 class="post-title">
+                    {{ post.title }}
+                    </h2>
+                <img class="post-image" [src]="post.imageUrl" alt="">
+                <p class="post-meta">Posted
+                    on {{ post.date }}</p>
+                </a>
+                </div>
+                <hr>
+        </div>
+    </div>
+</div>

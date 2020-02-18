@@ -1,0 +1,92 @@
+.post-title {
+    font-weight: 800;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.post-link:hover > .post-title {
+    color: #006bdd;
+}
+
+a {
+    text-decoration: none;
+}
+
+.post-image {
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    line-height: 1.5;
+    margin: 30px 0;
+}
+
+.post-meta {
+    font-size: 18px;
+    font-style: italic;
+    margin-top: 0;
+    color: #fff;
+}
+
+hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 2px solid #fff;
+}
+
+.title {
+    font-weight: 800;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 68px;
+    margin: 2rem 0;
+}
+
+.subtitle {
+    font-weight: 800;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    margin: 3.5rem 0 1rem 0;
+    color: #fff;
+}
+
+.contact-btn {
+    display: inline-block;
+    font-weight: 800;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    background: transparent;
+    border: 5px solid #007bff;
+    color: #007bff;
+    padding: 2rem 4rem;
+    font-size: 32px;
+    margin-top: 4rem;
+    text-transform: uppercase;
+}
+
+.contact-btn:hover {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.section-1 {
+    margin-bottom: 5rem;
+}
+
+.section-3 {
+    background: #212529;
+    width: 100%;
+    padding: 1rem 6rem;
+}
+
+@media screen and (max-width: 992px) {
+    .contact-btn {
+        display: block;
+        text-align: center;
+    }
+} 

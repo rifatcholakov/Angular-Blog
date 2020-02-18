@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ErrorComponent } from './error/error.component';
 import { BlogComponent } from './blog/blog.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -11,7 +12,8 @@ import { BlogComponent } from './blog/blog.component';
   declarations: [
     HomeComponent,
     ErrorComponent,
-    BlogComponent
+    BlogComponent,
+    AboutComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { BlogComponent } from './blog/blog.component';
   exports: [
     HomeComponent,
     ErrorComponent,
-    BlogComponent
+    BlogComponent,
+    AboutComponent
   ]
 })
 export class PagesModule { }

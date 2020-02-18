@@ -7,21 +7,29 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HeaderComponent } from './header/header.component';
 import { environment } from '../../environments/environment';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
   declarations: [HeaderComponent],
   imports: [
     CommonModule,
+    RouterModule,
     AngularFontAwesomeModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
   ],
   exports: [
+    CommonModule,
     AngularFontAwesomeModule,
-    HeaderComponent
+    HeaderComponent,
+    RouterModule,
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule
   ]
 })
 export class SharedModule { }

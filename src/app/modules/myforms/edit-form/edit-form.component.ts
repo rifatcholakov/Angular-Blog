@@ -30,6 +30,11 @@ export class EditFormComponent implements OnInit {
       const postId = this.route.snapshot.params['id'];
 
       this.api.getPost(postId).subscribe((data: Post) =>{
+        if(!data) {
+          this.api.errorMessage = "The post you're looking to edit doesn't exist yet :(";
+          this.router.navigate(['/not-found']);
+        }
+
         this.postForm.setValue({
           title: data.title,
           imageUrl: data.imageUrl,

@@ -16,7 +16,16 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.postId = this.route.snapshot.params['id'];
 
-    this.api.getPost(this.postId).subscribe(data => this.post = data);
+    this.api.getPost(this.postId).subscribe(
+      (data) => { 
+        this.post = data;
+        
+        if(!data) {
+          this.router.navigate(['/not-found']);
+        }
+      },
+      error => console.log(error)
+    );
   }
 
   onEdit() {

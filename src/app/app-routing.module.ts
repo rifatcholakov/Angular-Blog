@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'new-post', component: EditFormComponent },
   { path: 'post/:id', component: PostComponent},
   { path: 'edit/:id', component: EditFormComponent },
-  { path: '**', pathMatch: 'full', component: ErrorComponent }
+  { path: 'not-found', component: ErrorComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'not-found' }
 ];
 
 @NgModule({

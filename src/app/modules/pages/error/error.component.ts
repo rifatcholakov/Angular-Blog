@@ -9,7 +9,7 @@ export class ErrorComponent implements OnInit {
   backgroundUrl: string = '/assets/images/error.jpg';
   title: string = 'Sorry, something went wrong';
   subtitle: string = '';
-  @Input() errorMessage = "The page you're looking for doesn't exist :(";
+  @Input() errorMessage = "The THING you're looking for doesn't exist yet :(";
 
   constructor() { }
 

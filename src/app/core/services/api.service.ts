@@ -33,6 +33,7 @@ export class ApiService {
   }
 
   deletePost(id) {
+    this.router.navigate(['/']);
     this.db.collection('posts').doc(id).delete();
   }
 

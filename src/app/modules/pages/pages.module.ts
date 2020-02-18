@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { ErrorComponent } from './error/error.component';
+import { BlogComponent } from './blog/blog.component';
 
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    BlogComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { ErrorComponent } from './error/error.component';
   ],
   exports: [
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+    BlogComponent
   ]
 })
 export class PagesModule { }

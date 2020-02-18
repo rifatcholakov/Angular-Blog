@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
-export class PostComponent implements OnInit {
+export class PostComponent implements OnInit, OnDestroy {
   post: any;
   postId: string;
+  getPostSubscription: Subscription;
 
   constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.postId = this.route.snapshot.params['id'];
 
-    this.api.getPost(this.postId).subscribe(
+    this.getPostSubscription = this.api.getPost(this.postId).subscribe(
       (data) => { 
         this.post = data;
         
@@ -34,6 +36,9 @@ export class PostComponent implements OnInit {
 
   onDelete() {
     this.api.deletePost(this.postId);
-    this.router.navigate(['/']);
+  }
+
+  ngOnDestroy() {
+    this.getPostSubscription.unsubscribe();
   }
 }

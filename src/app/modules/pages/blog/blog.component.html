@@ -1,0 +1,24 @@
+<app-header title="Blog" subtitle="Because life is awesome..." backgroundUrl="/assets/images/blog.jpg"></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <ng-container *ngFor="let post of posts">
+                <div class="post-preview">
+                <a [routerLink]="'/post/' + post.id" class="post-link">
+                    <h2 class="post-title">
+                    {{ post.title }}
+                    </h2>
+                <img class="post-image" [src]="post.imageUrl" alt="">
+                <p class="post-meta">Posted
+                    on {{ post.date }}</p>
+                </a>
+                </div>
+                <hr>
+            </ng-container>
+            <!-- Pager -->
+            <!-- <div class="clearfix">
+              <a class="btn btn-primary float-right" href="#">Older Posts →</a>
+            </div> -->
+          </div>
+    </div>
+</div>

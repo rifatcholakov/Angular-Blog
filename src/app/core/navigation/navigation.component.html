@@ -27,7 +27,7 @@
                         <a (click)="auth.logOut()" class="nav-link" id="logout-btn">Sign out</a>
                     </div>
                     <div *ngIf="!this.auth.isLoggedIn">
-                        <a (click)="auth.googleAuth()" class="nav-link" id="login-btn"><fa name="google"></fa> Sign in</a>
+                        <a routerLink="/login" class="nav-link" id="login-btn">Log In</a>
                     </div>
                 </li>
             </ul>

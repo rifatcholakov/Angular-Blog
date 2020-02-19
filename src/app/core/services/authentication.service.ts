@@ -60,10 +60,6 @@ export class AuthenticationService {
       })
   }
 
-  googleAuth() {
-    return this.authLogin(new auth.GoogleAuthProvider());
-  }
-
   authLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
     .then((result) => {

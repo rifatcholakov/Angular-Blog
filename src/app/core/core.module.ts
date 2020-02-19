@@ -5,6 +5,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { SharedModule } from '../shared/shared.module';
 import { PostComponent } from './post/post.component';
 import { LoginComponent } from './authentication/login/login.component';
+import { RegisterComponent } from './authentication/register/register.component';
 
 
 
@@ -12,7 +13,7 @@ import { LoginComponent } from './authentication/login/login.component';
   declarations: [
     FooterComponent, 
     NavigationComponent, 
-    PostComponent, LoginComponent],
+    PostComponent, LoginComponent, RegisterComponent],
   imports: [
     CommonModule,
     SharedModule

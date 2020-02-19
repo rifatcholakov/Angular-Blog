@@ -4,7 +4,7 @@
             <div class="col-lg-8 col-md-10 mx-auto post-content" [innerHTML]="post?.content">
             </div>
         </div>
-        <div class="row">
+        <div class="row" *ngIf="auth.isLoggedIn">
             <div class="col-lg-8 col-md-10 mx-auto post-content text-right">
                 <button id="delete-btn" (click)="onDelete()">Delete</button>
                 <button id="edit-btn" (click)="onEdit()">Edit</button>

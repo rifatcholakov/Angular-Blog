@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { AuthenticationService } from '../services/authentication.service';
 
 @Component({
   selector: 'app-post',
@@ -13,7 +14,7 @@ export class PostComponent implements OnInit, OnDestroy {
   postId: string;
   getPostSubscription: Subscription;
 
-  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router, private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.postId = this.route.snapshot.params['id'];

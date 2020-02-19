@@ -24,10 +24,10 @@
                 </li>
                 <li class="nav-item">
                     <div *ngIf="this.auth.isLoggedIn">
-                        <a (click)="auth.SignOut()" class="nav-link" id="logout-btn">Sign out</a>
+                        <a (click)="auth.logOut()" class="nav-link" id="logout-btn">Sign out</a>
                     </div>
                     <div *ngIf="!this.auth.isLoggedIn">
-                        <a (click)="auth.GoogleAuth()" class="nav-link" id="login-btn"><fa name="google"></fa> Sign in</a>
+                        <a (click)="auth.googleAuth()" class="nav-link" id="login-btn"><fa name="google"></fa> Sign in</a>
                     </div>
                 </li>
             </ul>

@@ -2,12 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class LoginComponent implements OnInit {
-  @ViewChild('loginForm', { static: false}) form;
+export class RegisterComponent implements OnInit {
+  @ViewChild('registerForm', { static: false}) form;
   @ViewChild('userEmail', { static: false}) email;
   @ViewChild('userPassword', { static: false}) password;
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if(this.form.valid) {
-      this.authSevice.logIn(this.email.value, this.password.value)
+      this.authSevice.register(this.email.value, this.password.value)
     }
   }
 

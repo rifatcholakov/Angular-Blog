@@ -8,6 +8,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HeaderComponent } from './header/header.component';
 import { environment } from '../../environments/environment';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { RouterModule } from '@angular/router';
     AngularFirestoreModule,
     AngularFireAuthModule,
     AngularFireStorageModule,
+    FormsModule
   ],
   exports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { RouterModule } from '@angular/router';
     AngularFireModule,
     AngularFirestoreModule,
     AngularFireAuthModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    FormsModule
   ]
 })
 export class SharedModule { }

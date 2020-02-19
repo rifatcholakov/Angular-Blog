@@ -1,8 +1,8 @@
-<app-header title="LogIn" subtitle="" backgroundUrl="/assets/images/login.jpg"></app-header>
+<app-header title="Create an Account" subtitle="" backgroundUrl="/assets/images/login.jpg"></app-header>
 <div class="container">
     <div class="row">
         <div class="col-xl-8 col-lg-10 mx-auto">
-            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+            <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col">
                         <input #userEmail="ngModel" ngModel type="email" name="email" class="email input" placeholder="Email" pattern="\S+@\S+\.\S+" required>
@@ -41,10 +41,10 @@
                         </ul>
                     </div>
                 </div>
-                <button type="submit" class="login-btn">LogIn</button>
+                <button type="submit" class="register-btn">Register</button>
             </form>
             <div class="have-account">
-                <span>Don't have an account? <span class="redirect" routerLink="/register">Create an account</span></span>
+                <span>Already have an account? <span class="redirect" routerLink="/login">Log In</span></span>
             </div>
         </div>
     </div>

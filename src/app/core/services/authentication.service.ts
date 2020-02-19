@@ -29,24 +29,16 @@ export class AuthenticationService {
 
   get isLoggedIn(): boolean {
     const user = JSON.parse(localStorage.getItem('user'));
-    return (user !== null && user.emailVerified !== false) ? true : false;
+    return (user !== null) ? true : false;
   }
 
   register(email, password) {
     return this.afAuth.auth.createUserWithEmailAndPassword(email, password)
       .then((result) => {
-        this.sendVerificationMail();
-        this.setUserData(result.user);
+        this.setUserData(result.user).then(() => this.router.navigate(['/']));
       }).catch((error) => {
         this.error = error.message;
       })
-  }
-
-  sendVerificationMail() {
-    return this.afAuth.auth.currentUser.sendEmailVerification()
-    .then(() => {
-      this.router.navigate(['verify-email-address']);
-    })
   }
 
   logIn(email, password) {

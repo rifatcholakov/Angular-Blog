@@ -20,7 +20,15 @@
                     <a class="nav-link" routerLink="/">Portfolio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/">Contact</a>
+                    <a class="nav-link" routerLink="/contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <div *ngIf="this.auth.isLoggedIn">
+                        <a (click)="auth.SignOut()" class="nav-link" id="logout-btn">Sign out</a>
+                    </div>
+                    <div *ngIf="!this.auth.isLoggedIn">
+                        <a (click)="auth.GoogleAuth()" class="nav-link" id="login-btn"><fa name="google"></fa> Sign in</a>
+                    </div>
                 </li>
             </ul>
         </div>

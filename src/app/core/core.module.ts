@@ -4,6 +4,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { SharedModule } from '../shared/shared.module';
 import { PostComponent } from './post/post.component';
+import { LoginComponent } from './authentication/login/login.component';
 
 
 
@@ -11,7 +12,7 @@ import { PostComponent } from './post/post.component';
   declarations: [
     FooterComponent, 
     NavigationComponent, 
-    PostComponent],
+    PostComponent, LoginComponent],
   imports: [
     CommonModule,
     SharedModule
@@ -19,7 +20,7 @@ import { PostComponent } from './post/post.component';
   exports: [
     NavigationComponent,
     FooterComponent,
-    PostComponent
+    LoginComponent
   ]
 })
 export class CoreModule { }

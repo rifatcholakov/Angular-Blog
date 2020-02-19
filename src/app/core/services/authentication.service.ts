@@ -11,6 +11,7 @@ import { Router } from "@angular/router";
 export class AuthenticationService {
   
   userData: any;
+  error: string;
 
   constructor(public afs: AngularFirestore, public afAuth: AngularFireAuth, public router: Router, public ngZone: NgZone) {    
 
@@ -37,7 +38,7 @@ export class AuthenticationService {
         this.sendVerificationMail();
         this.setUserData(result.user);
       }).catch((error) => {
-        window.alert(error.message)
+        this.error = error.message;
       })
   }
 
@@ -56,7 +57,7 @@ export class AuthenticationService {
         });
         this.setUserData(result.user);
       }).catch((error) => {
-        window.alert(error.message)
+        this.error = error.message;
       })
   }
 

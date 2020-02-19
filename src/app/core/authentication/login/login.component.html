@@ -1,5 +1,12 @@
 <app-header title="LogIn" subtitle="" backgroundUrl="/assets/images/login.jpg"></app-header>
 <div class="container">
+    <div class="row" *ngIf="authSevice.error">
+        <div class="col-xl-8 col-lg-10 mx-auto">
+            <ul class="auth-error">
+                <li class="error auth-error">{{ authSevice.error }}</li>
+            </ul>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xl-8 col-lg-10 mx-auto">
             <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
@@ -31,13 +38,6 @@
                     <div class="col">
                         <ul>
                             <li class="error">Please enter a password</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row" *ngIf="(userPassword.validator.length < 6) && userPassword.touched && !userPassword.valid && !userPassword.pristine">
-                    <div class="col">
-                        <ul>
-                            <li class="error">The password should be at least 6 characters long</li>
                         </ul>
                     </div>
                 </div>

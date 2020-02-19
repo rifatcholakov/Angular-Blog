@@ -1,5 +1,12 @@
 <app-header title="Create an Account" subtitle="" backgroundUrl="/assets/images/login.jpg"></app-header>
 <div class="container">
+    <div class="row" *ngIf="authSevice.error">
+        <div class="col-xl-8 col-lg-10 mx-auto">
+            <ul class="auth-error">
+                <li class="error auth-error">{{ authSevice.error }}</li>
+            </ul>
+        </div>
+    </div>
     <div class="row">
         <div class="col-xl-8 col-lg-10 mx-auto">
             <form #registerForm="ngForm" (ngSubmit)="onSubmit()">

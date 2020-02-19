@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   constructor(public authSevice: AuthenticationService) { }
 
   ngOnInit() {
+    this.authSevice.error = null;
   }
 
   onSubmit() {

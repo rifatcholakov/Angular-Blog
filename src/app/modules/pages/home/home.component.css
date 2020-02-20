@@ -123,7 +123,8 @@ hr {
 }
   
 .text {
-    color: white;
+    color: #212529;
+    background-color: #fff;
     font-size: 38px;
     padding: 16px 32px;
     font-weight: 800;

@@ -5,6 +5,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ErrorComponent } from './error/error.component';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
+import { PortfolioComponent } from './portfolio/portfolio.component';
 
 
 
@@ -13,7 +14,8 @@ import { AboutComponent } from './about/about.component';
     HomeComponent,
     ErrorComponent,
     BlogComponent,
-    AboutComponent
+    AboutComponent,
+    PortfolioComponent
   ],
   imports: [
     CommonModule,

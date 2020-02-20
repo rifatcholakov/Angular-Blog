@@ -12,6 +12,8 @@ export class ApiService {
 
   constructor(private db: AngularFirestore, private router: Router) { }
 
+  // Post Operations
+
   getPosts() {
     return this.db.collection('posts').valueChanges();
   }
@@ -35,6 +37,22 @@ export class ApiService {
   deletePost(id) {
     this.router.navigate(['/']);
     this.db.collection('posts').doc(id).delete();
+  }
+
+  // Portfolio Operations
+
+  createPortfolioItem(post, id) {
+    this.db.collection('portfolioItems').doc(id).set(post).then(
+      () => this.router.navigate(['portfolio'])
+    );
+  }
+
+  getPortfolioItems() {
+    return this.db.collection('portfolioItems').valueChanges();
+  }
+
+  deletePortfolioItem(id) {
+    this.db.collection('portfolioItems').doc(id).delete().then(() => this.router.navigate(['/portfolio']));
   }
 
 }

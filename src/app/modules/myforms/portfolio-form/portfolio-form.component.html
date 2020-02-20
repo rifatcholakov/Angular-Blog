@@ -1,0 +1,68 @@
+<app-header title="Add new project" subtitle="Your work shows who you are." backgroundUrl="/assets/images/portfolio-form.jpg"></app-header>
+
+<div class="container">
+    <form #portfolioForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <!-- Project Name -->
+        <div class="row">
+            <div class="col">
+                <input #projectName="ngModel" ngModel name="projectName" type="text" id="projectName" placeholder="Project name" required>
+            </div>
+        </div>
+        <div class="row" *ngIf="!projectName.valid && projectName.touched">
+            <div class="col">
+                <ul>
+                    <li class="error">Please enter a project name</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project Image -->
+        <div class="row">
+            <div class="col">
+                <input #imageUrl="ngModel" ngModel name="imageUrl" type="text" id="projectImage" placeholder="Image URL" pattern="(https?:\/\/[^\s]+)" required>
+            </div>
+        </div>
+        <div class="row" *ngIf="!imageUrl.valid && imageUrl.touched && imageUrl.pristine">
+            <div class="col">
+                <ul>
+                    <li class="error">Please enter image URL</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" *ngIf="!imageUrl.valid && imageUrl.touched && !imageUrl.pristine">
+            <div class="col">
+                <ul>
+                    <li class="error">Please make sure the image URL starts with <strong>http(s)://</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Project Link -->
+        <div class="row">
+            <div class="col">
+                <input #projectUrl="ngModel" ngModel name="projectUrl" type="text" id="projectUrl" placeholder="Project URL" pattern="(https?:\/\/[^\s]+)" required>
+            </div>
+        </div>
+        <div class="row" *ngIf="!projectUrl.valid && projectUrl.touched && projectUrl.pristine">
+            <div class="col">
+                <ul>
+                    <li class="error">Please enter project URL</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" *ngIf="!projectUrl.valid && projectUrl.touched && !projectUrl.pristine">
+            <div class="col">
+                <ul>
+                    <li class="error">Please make sure the project URL starts with <strong>http(s)://</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3">
+                <button id="add-btn" type="submit">Add project</button>
+            </div>
+        </div>
+    </form>
+</div>

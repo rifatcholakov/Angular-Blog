@@ -4,10 +4,10 @@ import { EditFormComponent } from './edit-form/edit-form.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RichTextEditorModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { FormsModule } from '@angular/forms';
-
+import { PortfolioFormComponent } from './portfolio-form/portfolio-form.component';
 
 @NgModule({
-  declarations: [EditFormComponent],
+  declarations: [EditFormComponent, PortfolioFormComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
     RichTextEditorModule
   ],
   exports: [
-    EditFormComponent
+    EditFormComponent,
+    PortfolioFormComponent
   ]
 })
 export class MyformsModule { }

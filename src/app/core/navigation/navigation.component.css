@@ -70,6 +70,10 @@ a:hover {
         transform: translate3d(0,0,0);
     }
 
+    #brand {
+        color: #fff !important;
+    }
+
     .nav-link {
         color: #fff !important;
     }

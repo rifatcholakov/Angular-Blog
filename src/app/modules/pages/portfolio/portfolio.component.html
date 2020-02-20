@@ -1,0 +1,24 @@
+<app-header title="My Work" subtitle="Make it HAPPEN SHOCK Everyone." backgroundUrl="/assets/images/portfolio.jpg"></app-header>
+
+<div class="container section-2 mx-auto">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="new-project" *ngIf="auth.isLoggedIn">
+                <button class="new-project-btn" routerLink="/new-portfolio-item">Add New Project</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-lg-6" *ngFor="let item of portfolioItems">
+            <a [href]="item.projectUrl" target="_blank">
+                <div class="project-container">
+                    <img [src]="item.projectImage" alt="Avatar" class="image">
+                    <div class="middle">
+                    <div class="text">{{ item.projectName }}</div>
+                    </div>
+                </div>
+            </a>
+            <button class="delete-btn" *ngIf="auth.isLoggedIn" (click)="onDelete(item.id)">Delete Project</button>
+        </div>
+    </div>
+</div>

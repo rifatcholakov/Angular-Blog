@@ -10,12 +10,16 @@ import { LoginComponent } from './core/authentication/login/login.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { RegisterComponent } from './core/authentication/register/register.component';
 import { SecureInnerPagesGuard } from './core/guards/secure-inner-pages.guard';
+import { PortfolioComponent } from './modules/pages/portfolio/portfolio.component';
+import { PortfolioFormComponent } from './modules/myforms/portfolio-form/portfolio-form.component';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'portfolio', component: PortfolioComponent },
+  { path: 'new-portfolio-item', component: PortfolioFormComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'new-post', component: EditFormComponent, canActivate: [AuthGuard] },

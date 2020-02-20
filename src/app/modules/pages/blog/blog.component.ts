@@ -17,10 +17,7 @@ export class BlogComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getPostsSubscription = this.api.getPosts().subscribe(
-      (posts: Array<Post>) => this.posts = posts
-                                            .sort((a, b) => { 
-                                                  return b.createdAt - a.createdAt 
-                                            })
+      (posts: Array<Post>) => this.posts = posts.sort((a, b) => b.createdAt - a.createdAt)
     )
   }
 

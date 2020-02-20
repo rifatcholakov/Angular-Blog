@@ -17,13 +17,20 @@
         </div>
         <div class="row">
             <div class="col">
-                <input #imageUrl="ngModel" ngModel name="imageUrl" type="text" id="image" placeholder="Image url" required>
+                <input #imageUrl="ngModel" ngModel name="imageUrl" type="text" id="image" placeholder="Image url" pattern="(https?:\/\/[^\s]+)" required>
             </div>
         </div>
-        <div class="row" *ngIf="!imageUrl.valid && imageUrl.touched">
+        <div class="row" *ngIf="!imageUrl.valid && imageUrl.touched && imageUrl.pristine">
             <div class="col">
                 <ul>
                     <li class="error">Please enter image url</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row" *ngIf="!imageUrl.valid && imageUrl.touched && !imageUrl.pristine">
+            <div class="col">
+                <ul>
+                    <li class="error">Please make sure the image url starts with <strong>http(s)://</strong></li>
                 </ul>
             </div>
         </div>

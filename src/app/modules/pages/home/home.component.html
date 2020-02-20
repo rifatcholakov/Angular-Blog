@@ -15,22 +15,12 @@
         <h2 class="subtitle" id="black">My Work</h2>
     </div>
     <div class="row">
-        <div class="col-xl-6 col-lg-6">
-            <a href="https://www.taylorstitch.com/" target="_blank">
+        <div class="col-xl-6 col-lg-6" *ngFor="let item of portfolioItems">
+            <a [href]="item.projectUrl" target="_blank">
                 <div class="project-container">
-                    <img src="/assets/images/project1.jpg" alt="Avatar" class="image" style="width:100%">
+                    <img [src]="item.projectImage" alt="Avatar" class="image">
                     <div class="middle">
-                    <div class="text">TAYLOR STITCH</div>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-xl-6 col-lg-6">
-            <a href="https://www.skinnymetea.com.au/" target="_blank">
-                <div class="project-container">
-                    <img src="/assets/images/project2.jpg" alt="Avatar" class="image" style="width:100%">
-                    <div class="middle">
-                    <div class="text">SKINNY ME TEA</div>
+                    <div class="text">{{ item.projectName }}</div>
                     </div>
                 </div>
             </a>

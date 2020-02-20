@@ -6,6 +6,7 @@ import { ErrorComponent } from './error/error.component';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 
@@ -15,7 +16,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     ErrorComponent,
     BlogComponent,
     AboutComponent,
-    PortfolioComponent
+    PortfolioComponent,
+    ContactComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +27,8 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
     HomeComponent,
     ErrorComponent,
     BlogComponent,
-    AboutComponent
+    AboutComponent,
+    ContactComponent
   ]
 })
 export class PagesModule { }

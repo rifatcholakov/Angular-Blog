@@ -12,6 +12,7 @@ import { RegisterComponent } from './core/authentication/register/register.compo
 import { SecureInnerPagesGuard } from './core/guards/secure-inner-pages.guard';
 import { PortfolioComponent } from './modules/pages/portfolio/portfolio.component';
 import { PortfolioFormComponent } from './modules/myforms/portfolio-form/portfolio-form.component';
+import { ContactComponent } from './modules/pages/contact/contact.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'blog', component: BlogComponent },
   { path: 'about', component: AboutComponent },
   { path: 'portfolio', component: PortfolioComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'new-portfolio-item', component: PortfolioFormComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent, canActivate: [SecureInnerPagesGuard] },
   { path: 'register', component: RegisterComponent, canActivate: [SecureInnerPagesGuard] },

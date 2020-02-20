@@ -14,7 +14,7 @@ export class PostComponent implements OnInit, OnDestroy {
   postId: string;
   getPostSubscription: Subscription;
 
-  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router, private auth: AuthenticationService) { }
+  constructor(private api: ApiService, private route: ActivatedRoute, private router: Router, public auth: AuthenticationService) { }
 
   ngOnInit() {
     this.postId = this.route.snapshot.params['id'];

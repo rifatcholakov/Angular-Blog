@@ -43,3 +43,23 @@ hr {
     border: 0;
     border-top: 2px solid rgba(0,0,0,.1);
 }
+
+.new-post-btn {
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 0;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.new-post-btn:hover {
+    transition: ease-out 0.2s;
+    background-color: #006bdd;
+}

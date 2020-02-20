@@ -2,6 +2,9 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="new-post" *ngIf="auth.isLoggedIn">
+                <button class="new-post-btn" routerLink="/new-post">Create New Post</button>
+            </div>
             <ng-container *ngFor="let post of posts">
                 <div class="post-preview">
                 <a [routerLink]="'/post/' + post.id" class="post-link">

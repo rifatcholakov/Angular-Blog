@@ -1,6 +1,8 @@
 # Personal Website(Blog and Portfolio)
 CMS build using Angular. It allows you to create new post to keep you audience engaged, showcase your work by adding new projects to your portfolio and show your contact information so potential clients can contact you.
 
+<img src="https://i.imgur.com/HcNv655.jpg" />
+
 ## Preview
 
 https://blog-3f7e4.firebaseapp.com/
